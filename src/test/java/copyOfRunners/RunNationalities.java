@@ -12,7 +12,7 @@ import java.io.File;
                 "html:target/cucumber-Html-Report",
                 "com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport/ExtentReportEnd2End.html" // to generate a extend report we need this plugin
         },
-        features = {"src/test/java/FeatureFiles/_07_Fees.feature"},
+        features = {"src/test/java/FeatureFiles/_05_Natianalities.feature"},
         glue = {"StepDefinition"},
         dryRun = false
 )
