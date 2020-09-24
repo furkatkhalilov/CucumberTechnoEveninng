@@ -19,6 +19,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 )
 
 public class _02_SmokeTestRunnerWithTag extends AbstractTestNGCucumberTests {
+
 }
 
 
