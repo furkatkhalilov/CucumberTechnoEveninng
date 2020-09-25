@@ -1,6 +1,8 @@
 package StepDefinition;
 
+import PageObjectModel.TablesForJSBCSteps;
 import cucumber.api.java.en.Then;
+import org.testng.Assert;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ public class _15_JdbcSteps {
 
     private Connection connection; // With a connection I am able to connect to my Database need to provide URL , username , password
     private Statement statement;
+    TablesForJSBCSteps tablesForJSBCSteps = new TablesForJSBCSteps();
 
 // Connect to database
     public void createTheDataBaseConnection() throws SQLException {
@@ -43,10 +46,20 @@ public class _15_JdbcSteps {
 
         createTheDataBaseConnection();
 
-        ArrayList<String> a = getTheColumn(query,columnLocation);
+        ArrayList<String> FromTheDataBase = getTheColumn(query,columnLocation);
 
-        System.out.println(a);
+        System.out.println(FromTheDataBase);
 
+        ArrayList<String> FromWebSite = tablesForJSBCSteps.getTheList(columnLocation);
+
+        System.out.println(FromWebSite);
+
+//      Compare two ArrayLists by each element
+        for(int i =0 ; i<FromTheDataBase.size() ; i++){
+
+            Assert.assertEquals(FromTheDataBase.get(i),FromWebSite.get(i));
+
+        }
 
     }
 

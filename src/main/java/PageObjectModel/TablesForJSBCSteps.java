@@ -33,19 +33,31 @@ public class TablesForJSBCSteps {
     private List<WebElement> secondItemsInTable;
 
 
-
     public ArrayList<String> getTheList(int whichColumn){
 
         ArrayList<String> result = new ArrayList<>();
 
         if(whichColumn == 1){
-            result = firstItemsInTable;
+            result = webElementToStringList(firstItemsInTable);
         }else if(whichColumn ==2){
-            result = secondItemsInTable;
+            result = webElementToStringList(secondItemsInTable);
         }
 
+        return result;
     }
 
+    //    Create one method change webelement List to String arrayList
+    public ArrayList<String> webElementToStringList(List<WebElement> myList){
 
+        ArrayList<String> changedTexts = new ArrayList<>();
+
+        for(WebElement element:myList){
+
+            changedTexts.add(element.getText());
+
+        }
+
+        return changedTexts;
+    }
 
 }
