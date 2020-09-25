@@ -63,8 +63,8 @@ Feature: Entrance Examinations functionality
     Then Success message should be displayed
 
 
+
 #    Scenario outline vs Data table
 
 #    What is Data table in cucumber?
 
- 

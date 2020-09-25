@@ -70,6 +70,15 @@ public class LeftNavElements extends _01_ParentClass{
     @FindBy(xpath = " //span[text()='Release Notes']")
     private WebElement ReleaseNotesButton;
 
+    @FindBy(xpath = " (//span[text()='Reports'])[3]")
+    private WebElement reports;
+
+    @FindBy(xpath = "(//span[text()='Setup'])[7]")
+    private WebElement setupUnderTheReports;
+
+    @FindBy(xpath = "//span[text()='Excel Template']")
+    private WebElement excel_Template;
+
 
     /*
         We can create couple methods which is finding the element in the class
@@ -129,8 +138,15 @@ public class LeftNavElements extends _01_ParentClass{
             case "ReleaseNotesButton":
                 myElement =ReleaseNotesButton;
                 break;
-
-
+            case "reports":
+                myElement =reports;
+                break;
+            case "setupUnderTheReports":
+                myElement =setupUnderTheReports;
+                break;
+            case "excel_Template":
+                myElement =excel_Template;
+                break;
         }
 
 //    Call the method from the parent class.
