@@ -24,14 +24,14 @@ public class _15_JdbcSteps {
 //    Get the column from the database table
     public ArrayList<String> getTheColumn(String query , int whichColumn) throws SQLException {
 
-        ResultSet rs = statement.executeQuery(query);
+        ResultSet rs = statement.executeQuery(query); // Send the query to database and store it in the ResultSet
 
-        ArrayList<String> result = new ArrayList<>();
+        ArrayList<String> result = new ArrayList<>(); // All the data from the database will be stored in this ArrayList
 
-        while (rs.next()){
+        while (rs.next()){// while there is a next row then navigate to next row
 
-            String data = rs.getString(whichColumn);
-            result.add(data);
+            String data = rs.getString(whichColumn);// get the data one by one and store it in the String data
+            result.add(data); // add each data to arraylist
 
         }
 
@@ -41,11 +41,13 @@ public class _15_JdbcSteps {
     @Then("^Send the query to database \"([^\"]*)\" get the column (\\d+)$")
     public void send_the_query_to_database_get_the_column(String query, int columnLocation) throws Throwable {
 
-        ArrayList<String> a =getTheColumn(query,columnLocation);
+        createTheDataBaseConnection();
+
+        ArrayList<String> a = getTheColumn(query,columnLocation);
 
         System.out.println(a);
 
-
+        
     }
 
 
